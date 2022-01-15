@@ -35,7 +35,7 @@ export default class DoorModel {
     const isSelected = false;
     return new DoorModel(this.number, this.hasGift, isSelected, this.isOpen);
   }
-  changeSelected() {
+  toggleSelection() {
     const isSelected = !this.isSelected;
     return new DoorModel(this.number, this.hasGift, isSelected, this.isOpen);
   }

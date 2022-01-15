@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { Door } from "../components/Door";
 import { Gift } from "../components/Gift";
 import styles from "../styles/Home.module.css";
 import DoorModel from "../model/door";
+import { useState } from "react";
 
 const Home: NextPage = () => {
-  const p1 = new DoorModel(1);
-  const p2 = new DoorModel(2);
+  const [p1, setP1] = useState(new DoorModel(1));
   return (
     <div className={styles.container}>
       <Head>
@@ -17,8 +16,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Gift />
-      <Door door={p1} />
-      <Door door={p2} />
+      <Door value={p1} onChange={(newDoor) => setP1(newDoor)} />
     </div>
   );
 };
