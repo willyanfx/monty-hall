@@ -2,7 +2,7 @@ import styles from "../styles/Card.module.css";
 
 interface CardProps {
   backgroundColor?: string;
-  children: React.ReactChildren;
+  children: React.ReactNode;
 }
 
 function Card({ backgroundColor, children }: CardProps) {

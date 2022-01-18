@@ -14,8 +14,12 @@ function NumberInput({ text, value, onChange }: NumberInputProps) {
       <span className={styles.text}>{text}</span>
       <span className={styles.value}>{value}</span>
       <div className={styles.buttons}>
-        <button className={styles.button}>-</button>
-        <button className={styles.button}>+</button>
+        <button className={styles.button} onClick={dec}>
+          -
+        </button>
+        <button className={styles.button} onClick={inc}>
+          +
+        </button>
       </div>
     </div>
   );
