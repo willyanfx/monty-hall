@@ -16,13 +16,14 @@ function buildDoors(qty: number, doorWithGift: number): DoorModel[] {
   });
 }
 
-function updateDoors(doors: DoorModel[], doorModified: DoorModel) {
-  return doors.map((door) => {
-    const isModified = door.number === doorModified;
+function updateDoors(doors: DoorModel[], doorModified: DoorModel): DoorModel[] {
+  return doors.map((actualDoor: DoorModel) => {
+    const isModified = actualDoor.number === doorModified.number;
+    console.log("MODIFIED", doorModified, "ISMODIFIED::", isModified);
     if (isModified) {
       return doorModified;
     }
-    return doorModified.isOpen ? door : door.isSelected;
+    return doorModified.isOpen ? actualDoor : actualDoor.unselected();
   });
 }
 
