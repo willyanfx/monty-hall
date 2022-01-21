@@ -27,6 +27,7 @@ export default function Game() {
   useEffect(() => {
     const doors = Number(router.query.doors);
     const hasGift = convertBinaryToNumber(`${router.query.hasGift}`);
+    console.log("HAS GIFT:::", hasGift);
     const grid = buildDoors(doors, hasGift);
     setDoors(grid);
   }, [router?.query]);

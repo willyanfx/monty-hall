@@ -19,7 +19,6 @@ function buildDoors(qty: number, doorWithGift: number): DoorModel[] {
 function updateDoors(doors: DoorModel[], doorModified: DoorModel): DoorModel[] {
   return doors.map((actualDoor: DoorModel) => {
     const isModified = actualDoor.number === doorModified.number;
-    console.log("MODIFIED", doorModified, "ISMODIFIED::", isModified);
     if (isModified) {
       return doorModified;
     }
@@ -34,8 +33,9 @@ function convertBinaryToNumber(binary: string): number {
   return Number(String.fromCharCode(parseInt(binary, 2)));
 }
 
-function randomNumber(max: number) {
-  return Math.floor(Math.random() * (max - 1));
+function randomNumber(max: number): any {
+  const newNumber = Math.floor(Math.random() * (max - 1)) + 1;
+  return newNumber;
 }
 
 export {

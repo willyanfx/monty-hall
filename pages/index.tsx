@@ -13,10 +13,8 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     const newNumber = randomNumber(doorQty);
+
     setWithGift(convertNumberToBinary(newNumber));
-    return () => {
-      newNumber;
-    };
   }, [doorQty]);
 
   return (
